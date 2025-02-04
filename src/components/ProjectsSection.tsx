@@ -21,9 +21,17 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="py-20">
+    <section id="projects" className="py-20 bg-gradient-to-b from-[#1A1F2C] to-[#2A2F3C]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-primary text-center mb-12">Projects</h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
+        >
+          Projects
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -33,15 +41,15 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow">
+              <Card className="glass-effect hover:shadow-glow transition-all duration-300 h-full">
                 <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardTitle className="text-xl font-semibold text-white">{project.title}</CardTitle>
+                  <CardDescription className="text-gray-300">{project.description}</CardDescription>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-primary-light text-primary text-sm rounded"
+                        className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary-light border border-primary/20"
                       >
                         {tech}
                       </span>

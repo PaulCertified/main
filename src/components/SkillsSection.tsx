@@ -11,33 +11,43 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <section className="py-20 bg-primary-light">
+    <section className="py-20 bg-[#2A2F3C]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-primary text-center mb-12">Skills</h2>
-        <div className="max-w-3xl mx-auto grid gap-6">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-4">
-                <span className="w-24 text-primary font-medium">{skill.name}</span>
-                <div className="flex-1 bg-white rounded-full h-4">
-                  <motion.div
-                    className="bg-primary h-full rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  />
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
+        >
+          Skills
+        </motion.h2>
+        <div className="max-w-3xl mx-auto glass-effect p-8 rounded-lg">
+          <div className="space-y-6">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="w-32 text-gray-300 font-medium">{skill.name}</span>
+                  <div className="flex-1 bg-white/5 rounded-full h-3">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      transition={{ duration: 1, delay: 0.2 }}
+                      viewport={{ once: true }}
+                    />
+                  </div>
+                  <span className="w-12 text-gray-300 font-medium">{skill.level}%</span>
                 </div>
-                <span className="w-12 text-primary font-medium">{skill.level}%</span>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

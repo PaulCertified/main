@@ -25,18 +25,36 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#1a365d",
-          light: "#e2e8f0",
+          DEFAULT: "#F97316",
+          foreground: "#FFFFFF",
+          light: "#FEC6A1",
         },
-        tech: {
-          python: "#3776AB",
-          tensorflow: "#FF6F00",
-          pytorch: "#EE4C2C",
+        secondary: {
+          DEFAULT: "#8B5CF6",
+          foreground: "#FFFFFF",
         },
+        accent: {
+          DEFAULT: "#D946EF",
+          foreground: "#FFFFFF",
+        },
+        card: {
+          DEFAULT: "#1A1F2C",
+          foreground: "#FFFFFF",
+        },
+      },
+      borderRadius: {
+        lg: "1rem",
+        md: "0.75rem",
+        sm: "0.5rem",
+      },
+      boxShadow: {
+        glow: "0 0 20px rgba(249, 115, 22, 0.4)",
+        "glow-strong": "0 0 30px rgba(249, 115, 22, 0.6)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out",
         "slide-up": "slideUp 0.5s ease-out",
+        float: "float 6s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -46,6 +64,10 @@ export default {
         slideUp: {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },
