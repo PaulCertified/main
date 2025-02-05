@@ -19,6 +19,29 @@ const ParticleBackground = () => {
           },
         },
         fpsLimit: 120,
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: ["grab", "bubble"],
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 200,
+              links: {
+                opacity: 0.5,
+              },
+            },
+            bubble: {
+              distance: 250,
+              size: 4,
+              duration: 2,
+              opacity: 0.8,
+            },
+          },
+        },
         particles: {
           color: {
             value: "#F97316",
@@ -38,6 +61,11 @@ const ParticleBackground = () => {
             straight: false,
             outModes: {
               default: "bounce",
+            },
+            attract: {
+              enable: true,
+              rotateX: 600,
+              rotateY: 600,
             },
           },
           number: {
