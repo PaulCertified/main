@@ -74,7 +74,7 @@ serve(async (req) => {
           to: [
             {
               name: 'Site Admin',
-              email: 'paul.gipson@example.com' // Update this with your email
+              email: 'PaulCertifiedx@gmail.com' // Updated recipient email address
             }
           ]
         }
