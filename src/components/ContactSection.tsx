@@ -1,10 +1,59 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Linkedin, Github } from "lucide-react";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. We'll get back to you soon.",
+      });
+
+      // Clear form
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        variant: "destructive",
+        title: "Error sending message",
+        description: "Please try again later or contact us directly via email.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section id="contact" className="py-20 bg-[#1A1F2C]">
       <div className="container mx-auto px-4">
@@ -30,18 +79,45 @@ const ContactSection = () => {
             </a>
           </div>
           <div className="glass-effect p-8 rounded-lg">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Input type="text" placeholder="Name" className="bg-white/5 border-white/10 text-white placeholder:text-gray-400" />
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-400"
+                />
               </div>
               <div>
-                <Input type="email" placeholder="Email" className="bg-white/5 border-white/10 text-white placeholder:text-gray-400" />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-400"
+                />
               </div>
               <div>
-                <Textarea placeholder="Message" className="bg-white/5 border-white/10 text-white placeholder:text-gray-400 min-h-[150px]" />
+                <Textarea
+                  name="message"
+                  placeholder="Message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-400 min-h-[150px]"
+                />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white neon-glow">
-                Send Message
+              <Button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary/90 text-white neon-glow"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
