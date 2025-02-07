@@ -5,28 +5,36 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 const certificates = [
   {
-    name: "AWS Solutions Architect Professional",
+    name: "AWS Solutions Architect Associate",
     issueDate: "2024",
     validUntil: "2027",
-    level: "Professional",
+    level: "Associate",
     description: "Design of distributed systems and complex AWS architectures",
     verificationUrl: "https://aws.amazon.com/verification",
   },
   {
-    name: "AWS DevOps Engineer Professional",
-    issueDate: "2023",
-    validUntil: "2026",
-    level: "Professional",
-    description: "Implementation of continuous delivery systems and methodologies on AWS",
+    name: "AWS Machine Learning Engineer Associate",
+    issueDate: "2025",
+    validUntil: "2028",
+    level: "Associate",
+    description: "Development, training, deployment, and optimization of machine learning models on AWS",
     verificationUrl: "https://aws.amazon.com/verification",
   },
   {
-    name: "AWS Security Specialty",
-    issueDate: "2023",
-    validUntil: "2026",
-    level: "Specialty",
-    description: "Security best practices and specialized data protection mechanisms",
+    name: "AWS Certified Cloud Practitioner",
+    issueDate: "2024",
+    validUntil: "2027",
+    level: "Practitioner",
+    description: "Foundational AWS knowledge, including cloud concepts, security, pricing, and support",
     verificationUrl: "https://aws.amazon.com/verification",
+  },
+  {
+    name: "HashiCorp Certified: Terraform Associate (003)",
+    issueDate: "2024",
+    validUntil: "2027",
+    level: "Associate",
+    description: "Infrastructure as Code (IaC) using Terraform for cloud provisioning and automation",
+    verificationUrl: "https://www.hashicorp.com/certification/verify",
   },
 ];
 
@@ -41,9 +49,9 @@ const CertificatesSection = () => {
           viewport={{ once: true }}
           className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
         >
-          AWS Certifications
+          Professional Certifications
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {certificates.map((cert, index) => (
             <motion.div
               key={cert.name}
