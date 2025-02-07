@@ -69,12 +69,12 @@ serve(async (req) => {
           subject: 'New Contact Form Submission',
           from: {
             name: 'Contact Form',
-            email: 'noreply@yourdomain.com' // Update this with your verified sender
+            email: 'support@sendpulse.com' // Using SendPulse's default verified sender
           },
           to: [
             {
               name: 'Site Admin',
-              email: 'PaulCertifiedx@gmail.com' // Updated recipient email address
+              email: 'PaulCertifiedx@gmail.com'
             }
           ]
         }
