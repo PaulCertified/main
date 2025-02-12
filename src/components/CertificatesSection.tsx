@@ -10,7 +10,7 @@ const certificates = [
     validUntil: "2027",
     level: "Associate",
     description: "Design of distributed systems and complex AWS architectures",
-    verificationUrl: "https://aws.amazon.com/verification",
+    verificationUrl: "https://credly.com/earner/earned/badge/e2129bb0-10e8-4c3f-b94d-91b6b944a4cb",
   },
   {
     name: "AWS Machine Learning Engineer Associate",
@@ -18,7 +18,7 @@ const certificates = [
     validUntil: "2028",
     level: "Associate",
     description: "Development, training, deployment, and optimization of machine learning models on AWS",
-    verificationUrl: "https://aws.amazon.com/verification",
+    verificationUrl: "https://www.credly.com/earner/earned/badge/0dd87538-6a89-4721-b2c7-0dab426ca8f4",
   },
   {
     name: "AWS Certified Cloud Practitioner",
@@ -26,7 +26,7 @@ const certificates = [
     validUntil: "2027",
     level: "Practitioner",
     description: "Foundational AWS knowledge, including cloud concepts, security, pricing, and support",
-    verificationUrl: "https://aws.amazon.com/verification",
+    verificationUrl: "https://www.credly.com/earner/earned/badge/d4c3a1bb-2960-4942-9362-5339fee3fc44",
   },
   {
     name: "HashiCorp Certified: Terraform Associate (003)",
@@ -34,7 +34,7 @@ const certificates = [
     validUntil: "2027",
     level: "Associate",
     description: "Infrastructure as Code (IaC) using Terraform for cloud provisioning and automation",
-    verificationUrl: "https://www.hashicorp.com/certification/verify",
+    verificationUrl: "https://www.credly.com/earner/earned/badge/237993b8-cc0e-40c2-9553-f489212cddcd",
   },
 ];
 
