@@ -10,7 +10,7 @@ const certificates = [
     validUntil: "2027",
     level: "Associate",
     description: "Design of distributed systems and complex AWS architectures",
-    verificationUrl: "https://credly.com/earner/earned/badge/e2129bb0-10e8-4c3f-b94d-91b6b944a4cb",
+    verificationUrl: "https://www.credly.com/earner/earned/badge/e2129bb0-10e8-4c3f-b94d-91b6b944a4cb",
   },
   {
     name: "AWS Machine Learning Engineer Associate",
