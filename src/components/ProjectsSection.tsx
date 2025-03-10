@@ -1,7 +1,13 @@
+
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const projects = [
+  {
+    title: "Clinical Note Compliance Checker (NLP on AWS)",
+    description: "Uses AWS Comprehend Medical to analyze clinical notes and check for CMS and HIPAA compliance.",
+    tech: ["FastAPI", "AWS Lambda", "DynamoDB", "Python", "JavaScript"],
+  },
   {
     title: "AI Image Recognition System",
     description: "Developed a deep learning model for real-time image recognition using TensorFlow.",
