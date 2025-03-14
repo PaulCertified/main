@@ -16,8 +16,7 @@ const AboutSection = () => {
           </h2>
           <div className="glass-effect p-5 sm:p-8 rounded-lg">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-              I'm a passionate AI/ML Engineer with expertise in developing and deploying machine learning models. 
-              My work focuses on creating innovative solutions using cutting-edge AI technologies.
+              I'm a passionate Full-Stack AI Engineer with expertise in developing and deploying end-to-end machine learning solutions. I specialize in building scalable AI systems, integrating machine learning models into full-stack applications, and leveraging cloud technologies to optimize performance. My work focuses on creating innovative, production-ready AI solutions using cutting-edge tools and frameworks.
             </p>
           </div>
         </motion.div>
