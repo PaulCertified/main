@@ -6,7 +6,14 @@ const projects = [
   {
     title: "Clinical Note Compliance Checker (NLP on AWS)",
     description: "Uses AWS Comprehend Medical to analyze clinical notes and check for CMS and HIPAA compliance.",
-    tech: ["FastAPI", "AWS Lambda", "DynamoDB", "Python", "JavaScript"],
+    tech: ["FastAPI", "AWS Lambda", "DynamoDB", "IAM", "Python", "JavaScript", "HTML/CSS"],
+    details: [
+      "Modern FastAPI Python web framework with Swagger UI documentation",
+      "Serverless AWS Lambda compute for note analysis",
+      "NoSQL DynamoDB for storing analysis results",
+      "Role-based IAM access control and security policies",
+      "Frontend built with responsive design principles"
+    ]
   },
   {
     title: "AI Image Recognition System",
@@ -38,7 +45,7 @@ const ProjectsSection = () => {
         >
           Projects
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -50,8 +57,20 @@ const ProjectsSection = () => {
               <Card className="glass-effect hover:shadow-glow transition-all duration-300 h-full">
                 <CardHeader>
                   <CardTitle className="text-xl font-semibold text-white">{project.title}</CardTitle>
-                  <CardDescription className="text-gray-300">{project.description}</CardDescription>
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <CardDescription className="text-gray-300 mb-4">{project.description}</CardDescription>
+                  
+                  {project.details && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-primary-light mb-2">Key Features:</h4>
+                      <ul className="list-disc pl-5 text-sm text-gray-300 space-y-1">
+                        {project.details.map((detail, idx) => (
+                          <li key={idx}>{detail}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <div className="flex flex-wrap gap-2 mt-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
