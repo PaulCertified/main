@@ -1,12 +1,30 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "Python", level: 90 },
-  { name: "TensorFlow", level: 85 },
-  { name: "PyTorch", level: 80 },
-  { name: "Machine Learning", level: 85 },
-  { name: "Deep Learning", level: 80 },
-  { name: "Computer Vision", level: 75 },
+  {
+    title: "Full-Stack AI & Machine Learning Engineering",
+    description: "Expertise in developing and deploying ML models (e.g., AWS Comprehend Medical, AWS Bedrock) with real-world applications."
+  },
+  {
+    title: "Cloud & DevOps (AWS & Terraform)",
+    description: "Strong experience with AWS services (EC2, S3, Lambda, DynamoDB, SageMaker) and Infrastructure as Code (Terraform)."
+  },
+  {
+    title: "Backend Development & APIs",
+    description: "Proficiency in FastAPI, Node.js, Express.js for building scalable and secure API-driven applications."
+  },
+  {
+    title: "Frontend Development & UI/UX",
+    description: "Skilled in React, TypeScript, Material-UI, and responsive design for user-friendly web applications."
+  },
+  {
+    title: "Security & Identity Management",
+    description: "Knowledge of IAM, JWT authentication, role-based access control, and compliance (HIPAA, CMS)."
+  },
+  {
+    title: "IT Infrastructure & Support",
+    description: "Extensive experience managing Windows/Linux servers, Active Directory, VPNs, and enterprise IT environments."
+  }
 ];
 
 const SkillsSection = () => {
@@ -22,29 +40,19 @@ const SkillsSection = () => {
         >
           Skills
         </motion.h2>
-        <div className="max-w-3xl mx-auto glass-effect p-5 sm:p-8 rounded-lg">
-          <div className="space-y-4 sm:space-y-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((skill, index) => (
               <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={skill.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className="glass-effect p-5 sm:p-6 rounded-lg h-full"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                  <span className="text-sm sm:text-base w-full sm:w-32 text-gray-300 font-medium">{skill.name}</span>
-                  <div className="flex-1 bg-white/5 rounded-full h-2 sm:h-3">
-                    <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: 0.2 }}
-                      viewport={{ once: true }}
-                    />
-                  </div>
-                  <span className="text-sm sm:text-base w-12 text-right text-gray-300 font-medium">{skill.level}%</span>
-                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-primary-light mb-3">{skill.title}</h3>
+                <p className="text-sm sm:text-base text-gray-300">{skill.description}</p>
               </motion.div>
             ))}
           </div>
