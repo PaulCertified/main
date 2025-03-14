@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
@@ -42,18 +41,18 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-[#1A1F2C] to-[#2A2F3C]">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-[#1A1F2C] to-[#2A2F3C]">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
+          className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
         >
           Projects
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -63,7 +62,7 @@ const ProjectsSection = () => {
               viewport={{ once: true }}
             >
               <Card className="glass-effect hover:shadow-glow transition-all duration-300 h-full">
-                <CardHeader>
+                <CardHeader className="p-4 sm:p-6">
                   <CardTitle className="text-xl font-semibold text-white">{project.title}</CardTitle>
                   <CardDescription className="text-gray-300 mb-4">{project.description}</CardDescription>
                   
@@ -82,7 +81,7 @@ const ProjectsSection = () => {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary-light border border-primary/20"
+                        className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm bg-primary/10 text-primary-light border border-primary/20"
                       >
                         {tech}
                       </span>

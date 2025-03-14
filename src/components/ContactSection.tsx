@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -55,7 +54,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#1A1F2C]">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-[#1A1F2C]">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,10 +63,10 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="max-w-xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary">
             Get in Touch
           </h2>
-          <div className="flex justify-center gap-6 mb-12">
+          <div className="flex justify-center gap-6 mb-8 sm:mb-12">
             <a href="mailto:paul.gipson@example.com" className="text-gray-300 hover:text-primary transition-colors duration-300">
               <Mail size={24} />
             </a>
@@ -78,8 +77,8 @@ const ContactSection = () => {
               <Github size={24} />
             </a>
           </div>
-          <div className="glass-effect p-8 rounded-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="glass-effect p-5 sm:p-8 rounded-lg">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <Input
                   type="text"
@@ -109,7 +108,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-400 min-h-[150px]"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-gray-400 min-h-[120px] sm:min-h-[150px]"
                 />
               </div>
               <Button

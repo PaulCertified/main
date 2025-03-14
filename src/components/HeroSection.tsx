@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 opacity-50">
         <ParticleBackground />
       </div>
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 py-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ const HeroSection = () => {
           className="space-y-6"
         >
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -23,7 +23,7 @@ const HeroSection = () => {
             Paul Gipson
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 font-light"
+            className="text-lg sm:text-xl md:text-2xl text-gray-300 font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -34,7 +34,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex justify-center gap-4"
+            className="flex flex-col sm:flex-row justify-center gap-4 px-4"
           >
             <a href="#projects" className="px-8 py-3 rounded-full bg-primary text-white neon-glow hover:bg-primary/90 transition-all duration-300">
               View Projects
