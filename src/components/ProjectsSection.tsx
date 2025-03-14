@@ -16,9 +16,17 @@ const projects = [
     ]
   },
   {
-    title: "AI Image Recognition System",
-    description: "Developed a deep learning model for real-time image recognition using TensorFlow.",
-    tech: ["Python", "TensorFlow", "OpenCV"],
+    title: "Medical Knowledge Chatbot",
+    description: "A sophisticated chatbot application that leverages AI to provide medical knowledge and information to users.",
+    tech: ["Node.js", "Express.js", "React", "TypeScript", "AWS Bedrock", "DynamoDB", "Redis", "OpenSearch", "Material-UI"],
+    details: [
+      "Real-time chat interface with AI-powered responses",
+      "Medical knowledge base integration with OpenSearch",
+      "User authentication using JWT and session management",
+      "Rate limiting, request validation, and comprehensive error handling",
+      "React with TypeScript and Material-UI for the frontend",
+      "React Query for state management"
+    ]
   },
   {
     title: "NLP Chatbot",
