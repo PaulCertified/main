@@ -68,10 +68,10 @@ const ContactSectionEmailJS = () => {
             <a href="mailto:ipaulgipson@gmail.com" className="text-gray-300 hover:text-primary transition-colors duration-300">
               <Mail size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/paulcertified/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
               <Linkedin size={24} />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
+            <a href="https://github.com/PaulCertified" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
               <Github size={24} />
             </a>
           </div>
