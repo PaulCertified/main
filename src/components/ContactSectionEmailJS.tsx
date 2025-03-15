@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Linkedin, Github } from "lucide-react";
 import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
+import SocialLinks from "./SocialLinks";
 
 const ContactSectionEmailJS = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,17 +64,9 @@ const ContactSectionEmailJS = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-primary">
             Get in Touch
           </h2>
-          <div className="flex justify-center gap-6 mb-8 sm:mb-12">
-            <a href="mailto:ipaulgipson@gmail.com" className="text-gray-300 hover:text-primary transition-colors duration-300">
-              <Mail size={24} />
-            </a>
-            <a href="https://www.linkedin.com/in/paulcertified/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
-              <Linkedin size={24} />
-            </a>
-            <a href="https://github.com/PaulCertified" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
-              <Github size={24} />
-            </a>
-          </div>
+          
+          <SocialLinks />
+          
           <div className="glass-effect p-5 sm:p-8 rounded-lg">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
