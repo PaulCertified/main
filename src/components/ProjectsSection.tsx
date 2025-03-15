@@ -12,7 +12,25 @@ const projects = [
       "NoSQL DynamoDB for storing analysis results",
       "Role-based IAM access control and security policies",
       "Frontend built with responsive design principles"
-    ]
+    ],
+    overview: "Healthcare providers must ensure clinical documentation meets strict compliance standards. This project leverages AWS Comprehend Medical's NLP capabilities to automatically scan, analyze, and flag potential compliance issues in clinical notes, helping healthcare organizations maintain regulatory compliance with CMS requirements and HIPAA regulations while improving operational efficiency."
+  },
+  {
+    title: "ICD-10 & CPT Medical Code Prediction from Clinical Text",
+    description: "This project extracts diagnosis and procedure descriptions from unstructured clinical text and maps them to standardized medical codes (ICD-10 for diagnoses and CPT for procedures) using NLP and transformer models.",
+    tech: ["Python", "BioBERT", "AWS SageMaker", "FastAPI", "NLP", "Transformer Models", "AWS", "REST API"],
+    details: [
+      "Extract medical conditions and procedures from clinical text",
+      "Predict appropriate ICD-10 and CPT codes with confidence scores",
+      "Provide explanations for code predictions",
+      "Support for batch processing of clinical documents",
+      "AWS SageMaker integration for scalable deployment",
+      "Context-aware predictions based on clinical text analysis",
+      "Interactive web interface for instant predictions",
+      "FastAPI Web Service with HTML interface for user-friendly access",
+      "Keyword Analysis with context-based prediction system"
+    ],
+    overview: "Medical coding is a critical process in healthcare that involves translating clinical documentation into standardized codes for billing, research, and administrative purposes. This project aims to automate this process using state-of-the-art NLP techniques."
   },
   {
     title: "Medical Knowledge Chatbot",
@@ -25,12 +43,8 @@ const projects = [
       "Rate limiting, request validation, and comprehensive error handling",
       "React with TypeScript and Material-UI for the frontend",
       "React Query for state management"
-    ]
-  },
-  {
-    title: "NLP Chatbot",
-    description: "Created an intelligent chatbot using natural language processing techniques.",
-    tech: ["Python", "PyTorch", "NLTK"],
+    ],
+    overview: "Access to reliable medical information is crucial for both healthcare professionals and patients. This project delivers an intelligent chatbot powered by AWS Bedrock generative AI that retrieves and communicates accurate medical information from a curated knowledge base. The system combines the power of large language models with domain-specific medical data to provide contextually relevant responses while maintaining appropriate medical disclaimers and referring users to seek professional medical advice when appropriate."
   },
   {
     title: "Predictive Analytics Platform",
@@ -65,6 +79,13 @@ const ProjectsSection = () => {
                 <CardHeader className="p-4 sm:p-6">
                   <CardTitle className="text-xl font-semibold text-white">{project.title}</CardTitle>
                   <CardDescription className="text-gray-300 mb-4">{project.description}</CardDescription>
+                  
+                  {project.overview && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-primary-light mb-2">Project Overview:</h4>
+                      <p className="text-sm text-gray-300">{project.overview}</p>
+                    </div>
+                  )}
                   
                   {project.details && (
                     <div className="mb-4">
