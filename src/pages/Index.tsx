@@ -1,9 +1,8 @@
-
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import ContactSection from "@/components/ContactSection";
+import ContactSectionEmailJS from "@/components/ContactSectionEmailJS";
 import CertificatesSection from "@/components/CertificatesSection";
 
 const Index = () => {
@@ -14,7 +13,7 @@ const Index = () => {
       <ProjectsSection />
       <CertificatesSection />
       <SkillsSection />
-      <ContactSection />
+      <ContactSectionEmailJS />
     </main>
   );
 };

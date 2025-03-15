@@ -3,33 +3,34 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Linkedin, Github } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
-const ContactSection = () => {
+const ContactSectionEmailJS = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
+    
     setIsSubmitting(true);
 
     try {
-      // Replace YOUR_FORM_ID with the actual form ID from Formspree
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      // Replace these with your actual EmailJS credentials from your dashboard
+      // Service ID: Found in Email Services tab (e.g., 'service_a1b2c3d')
+      // Template ID: Found in Email Templates tab (e.g., 'template_x1y2z3')
+      // Public Key: Found in Account > API Keys (e.g., 'AbCdEfGhIjKlMnOp')
+      const result = await emailjs.sendForm(
+        'service_0xhspc6', 
+        'template_6tf1sst',
+        formRef.current,
+        'ioN-aNT30z350tn_A'
+      );
 
-      if (!response.ok) throw new Error("Failed to send message");
+      if (result.text !== 'OK') throw new Error('Failed to send message');
 
       toast({
         title: "Message sent!",
@@ -37,24 +38,17 @@ const ContactSection = () => {
       });
 
       // Clear form
-      setFormData({ name: "", email: "", message: "" });
+      formRef.current.reset();
     } catch (error) {
       console.error('Error sending message:', error);
       toast({
         variant: "destructive",
         title: "Error sending message",
-        description: "Please try again later or contact us directly via email.",
+        description: "Please try again later or contact me directly via email.",
       });
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -71,7 +65,7 @@ const ContactSection = () => {
             Get in Touch
           </h2>
           <div className="flex justify-center gap-6 mb-8 sm:mb-12">
-            <a href="mailto:paul.gipson@example.com" className="text-gray-300 hover:text-primary transition-colors duration-300">
+            <a href="mailto:ipaulgipson@gmail.com" className="text-gray-300 hover:text-primary transition-colors duration-300">
               <Mail size={24} />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">
@@ -82,14 +76,12 @@ const ContactSection = () => {
             </a>
           </div>
           <div className="glass-effect p-5 sm:p-8 rounded-lg">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <Input
                   type="text"
-                  name="name"
+                  name="user_name"
                   placeholder="Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
                   required
                   className="bg-white/5 border-white/10 text-white placeholder:text-gray-400"
                 />
@@ -97,10 +89,8 @@ const ContactSection = () => {
               <div>
                 <Input
                   type="email"
-                  name="email"
+                  name="user_email"
                   placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
                   required
                   className="bg-white/5 border-white/10 text-white placeholder:text-gray-400"
                 />
@@ -109,8 +99,6 @@ const ContactSection = () => {
                 <Textarea
                   name="message"
                   placeholder="Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
                   required
                   className="bg-white/5 border-white/10 text-white placeholder:text-gray-400 min-h-[120px] sm:min-h-[150px]"
                 />
@@ -130,4 +118,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default ContactSectionEmailJS; 
