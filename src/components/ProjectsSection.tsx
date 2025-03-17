@@ -3,6 +3,23 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 const projects = [
   {
+    title: "EHR Data Extraction & Summarization",
+    description: "A modern application for extracting structured data and generating summaries from medical text documents using large language models.",
+    tech: ["Python", "FastAPI", "AWS Bedrock", "Claude 3", "MongoDB", "JWT", "Bootstrap 5", "Uvicorn", "Pydantic"],
+    details: [
+      "Extract patient demographics, chief complaints, symptoms, and medical history",
+      "List current medications, allergies, and vital signs",
+      "Document assessment and plan from medical text",
+      "Generate audience-specific summaries (physician, patient, or nurse-focused)",
+      "Configure summary length and focus areas",
+      "Clean, modern interface for demonstrations and testing",
+      "Fully functional mock mode for demonstrations without LLM access",
+      "Realistic data generation for testing purposes",
+      "Toggle features via environment variables"
+    ],
+    overview: "This project provides a system for processing Electronic Health Records (EHR) and clinical notes to extract structured data from unstructured medical text and generate context-aware summaries for different audience types. The application integrates AWS Bedrock's Claude 3 Sonnet model with a FastAPI backend and a Bootstrap 5 frontend to deliver a modern, user-friendly experience for healthcare professionals."
+  },
+  {
     title: "Streetliner Performance Inc. Website",
     description: "Developed a responsive website for Streetliner Performance Inc., an automotive performance shop located in Gardena, CA.",
     tech: ["HTML5", "CSS3", "JavaScript", "Google Maps API", "Calendly", "Python", "Responsive Design"],
