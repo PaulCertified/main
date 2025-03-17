@@ -3,6 +3,23 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 const projects = [
   {
+    title: "Streetliner Performance Inc. Website",
+    description: "Developed a responsive website for Streetliner Performance Inc., an automotive performance shop located in Gardena, CA.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Google Maps API", "Calendly", "Python", "Responsive Design"],
+    details: [
+      "Responsive design with mobile-first approach that works seamlessly across all devices",
+      "Interactive elements including animated hamburger menu, advanced image lightbox, and touch-enabled navigation",
+      "Services slider with detailed information and dynamic portfolio grid",
+      "Performance optimizations with compressed images, optimized CSS, and semantic HTML",
+      "Calendly integration for scheduling appointments directly from the website",
+      "Google Maps integration with interactive location display",
+      "Custom animations with smooth transitions and hover effects",
+      "Improved image gallery with keyboard and touch navigation",
+      "Contact form with client-side validation"
+    ],
+    overview: "This project showcases a modern, responsive website for an automotive performance shop. The website features a clean, professional design with interactive elements and integrations with third-party services like Calendly and Google Maps. The mobile-first approach ensures the site works seamlessly across all devices, while performance optimizations ensure fast loading times."
+  },
+  {
     title: "Clinical Note Compliance Checker (NLP on AWS)",
     description: "Uses AWS Comprehend Medical to analyze clinical notes and check for CMS and HIPAA compliance.",
     tech: ["FastAPI", "AWS Lambda", "DynamoDB", "IAM", "Python", "JavaScript", "HTML/CSS"],
@@ -45,12 +62,7 @@ const projects = [
       "React Query for state management"
     ],
     overview: "Access to reliable medical information is crucial for both healthcare professionals and patients. This project delivers an intelligent chatbot powered by AWS Bedrock generative AI that retrieves and communicates accurate medical information from a curated knowledge base. The system combines the power of large language models with domain-specific medical data to provide contextually relevant responses while maintaining appropriate medical disclaimers and referring users to seek professional medical advice when appropriate."
-  },
-  {
-    title: "Predictive Analytics Platform",
-    description: "Built a machine learning platform for predictive analytics in business.",
-    tech: ["Python", "Scikit-learn", "pandas"],
-  },
+  }
 ];
 
 const ProjectsSection = () => {
