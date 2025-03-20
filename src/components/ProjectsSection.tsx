@@ -3,6 +3,23 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 const projects = [
   {
+    title: "Secure AI-Powered Medical Documentation Audit",
+    description: "An AWS-based system that automatically scans clinical documents and detects compliance violations, such as missing consents and unauthorized access, with a modern React frontend for document management and compliance reporting.",
+    tech: ["React", "TypeScript", "Material UI", "AWS Textract", "AWS Comprehend Medical", "AWS Lambda", "S3", "API Gateway", "Node.js", "Express", "IAM", "CloudFormation"],
+    details: [
+      "Automated document analysis for consent forms, medical histories, and treatment plans",
+      "Real-time compliance verification for missing signatures, expired consents, and unauthorized disclosures",
+      "Interactive dashboard with compliance metrics, document activities, and trend analysis",
+      "Comprehensive reporting with filtering and export capabilities",
+      "Secure document management with appropriate security controls",
+      "Document OCR and processing via AWS Textract",
+      "Medical entity extraction using AWS Comprehend Medical",
+      "Compliance violation detection with severity levels",
+      "Modern React frontend with Material UI components and data grids"
+    ],
+    overview: "The Secure AI-Powered Medical Documentation Audit system provides healthcare organizations with an automated solution for ensuring regulatory compliance in medical documentation. This application leverages artificial intelligence to analyze medical documents, identify potential compliance issues, and generate detailed reports to help healthcare providers maintain adherence to industry regulations."
+  },
+  {
     title: "EHR Data Extraction & Summarization",
     description: "A modern application for extracting structured data and generating summaries from medical text documents using large language models.",
     tech: ["Python", "FastAPI", "AWS Bedrock", "Claude 3", "MongoDB", "JWT", "Bootstrap 5", "Uvicorn", "Pydantic"],
