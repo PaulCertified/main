@@ -3,6 +3,23 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 const projects = [
   {
+    title: "LLM-Powered Document Processing System",
+    description: "An advanced document processing system leveraging large language models to automate extraction, classification, and analysis of information from various document types.",
+    tech: ["Python", "FastAPI", "React.js", "Material UI", "Node.js", "PostgreSQL", "MongoDB", "S3", "Docker", "Kubernetes", "Prometheus", "Grafana", "GitHub Actions"],
+    details: [
+      "Intelligent document processing with automatic data extraction from unstructured documents",
+      "Multi-format support for PDFs, images (JPG, PNG), scanned documents, and digital files",
+      "Continuous learning capabilities with feedback loops and model retraining",
+      "Template management system for recurring document formats",
+      "Enterprise-grade security with role-based access control",
+      "Comprehensive API for integration with existing systems",
+      "Analytics dashboard with metrics on processing volumes, accuracy, and efficiency",
+      "Microservices architecture with dedicated components for document processing, ML, and template management",
+      "Completed Phases 1-3 (Core Infrastructure, Enhanced Processing, Advanced Features)"
+    ],
+    overview: "This system enables organizations to automatically process, extract, and analyze information from diverse document types (invoices, receipts, contracts, forms) using state-of-the-art language models. Built with a microservices architecture, the project features continuous learning capabilities, a flexible template system, and robust security measures. Currently in the Production Readiness phase with component testing completed and integration testing in progress."
+  },
+  {
     title: "Full Stack Goat - AI Solutions & Web Development",
     description: "A modern React-based landing page for Full Stack Goat, showcasing AI services, web development offerings, and providing lead capture functionality through contact forms and direct scheduling.",
     tech: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Shadcn UI", "Framer Motion", "EmailJS", "React Router DOM", "React Hook Form", "TanStack Query", "Next Themes", "Canvas Confetti", "Lucide React"],
