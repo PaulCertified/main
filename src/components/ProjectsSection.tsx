@@ -3,6 +3,23 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 
 const projects = [
   {
+    title: "Full Stack Goat - AI Solutions & Web Development",
+    description: "A modern React-based landing page for Full Stack Goat, showcasing AI services, web development offerings, and providing lead capture functionality through contact forms and direct scheduling.",
+    tech: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Shadcn UI", "Framer Motion", "EmailJS", "React Router DOM", "React Hook Form", "TanStack Query", "Next Themes", "Canvas Confetti", "Lucide React"],
+    details: [
+      "Modern UI/UX design with sleek, responsive interface and interactive elements",
+      "Service showcase highlighting AI and web development offerings with feature sections",
+      "Flexible pricing plans with business and personal packages and toggle options",
+      "Lead capture through contact form with EmailJS integration",
+      "Calendly integration for direct meeting scheduling",
+      "Custom quote request functionality",
+      "Interactive animations and transitions for an engaging user experience",
+      "Fully optimized for all device sizes with mobile-first approach",
+      "Dark/Light mode theme toggling for user preference"
+    ],
+    overview: "Full Stack Goat is a professional landing page designed to showcase AI solution services and web development offerings. The site features modern design elements, interactive components, and lead generation functionality through multiple channels including direct contact forms and appointment scheduling. Built with React 18 and TypeScript, the site demonstrates best practices in modern web development with a focus on performance and user experience."
+  },
+  {
     title: "Secure AI-Powered Medical Documentation Audit",
     description: "An AWS-based system that automatically scans clinical documents and detects compliance violations, such as missing consents and unauthorized access, with a modern React frontend for document management and compliance reporting.",
     tech: ["React", "TypeScript", "Material UI", "AWS Textract", "AWS Comprehend Medical", "AWS Lambda", "S3", "API Gateway", "Node.js", "Express", "IAM", "CloudFormation"],
